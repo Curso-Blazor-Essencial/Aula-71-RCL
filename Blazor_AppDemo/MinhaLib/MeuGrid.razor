@@ -1,0 +1,33 @@
+﻿@typeparam GItem
+
+
+<table border="2">
+    <thead>
+        <tr>@Cabecalho</tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Itens)
+        {
+            <tr>@Linha(item)</tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            @Rodape
+        </tr>
+    </tfoot>
+</table>
+
+@code {
+    [Parameter]
+    public RenderFragment Cabecalho { get; set; }
+    [Parameter]
+    public RenderFragment<GItem> Linha { get; set; }
+    [Parameter]
+    public RenderFragment Rodape { get; set; }
+    [Parameter]
+    public IReadOnlyList<GItem> Itens { get; set; }
+
+
+    
+}

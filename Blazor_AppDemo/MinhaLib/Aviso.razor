@@ -1,0 +1,13 @@
+﻿@if (Exibir)
+{
+    <div class="alert alert-sedoncary mt-4" role="alert">
+        @ChildContent
+    </div>
+}
+
+@code {
+    [Parameter]
+    public bool Exibir { get; set; }
+    [Parameter]
+    public RenderFragment ChildContent{ get; set; }
+}
